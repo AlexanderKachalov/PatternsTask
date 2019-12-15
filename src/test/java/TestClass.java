@@ -18,11 +18,12 @@ public class TestClass {
     void testFormIfValidateAllInputData() {
         openForm();
         inputValidData();
+        inputDay();
         form.$("[data-test-id=agreement]").click();
         form.$$("button").find(exactText("Запланировать")).click();
         $("[data-test-id=success-notification]").shouldBe(visible);
         $(By.xpath("//*[@id='root']/div/div[1]/button")).click();
-        inputOtherData();
+        inputOtherDay();
         form.$$("button").find(exactText("Запланировать")).click();
         $("[data-test-id=replan-notification]").shouldBe(visible);
         form.$$("button").find(exactText("Перепланировать")).click();
@@ -36,17 +37,20 @@ public class TestClass {
 
     private void inputValidData() {
         Faker faker = new Faker(new Locale("ru"));
-        String nameUser = faker.name().firstName();
+        String nameUser = faker.name().firstName().replace('ё', 'е');;
         String phoneNumber = faker.phoneNumber().phoneNumber().replaceAll("[()\\-]", "");
-        String cityName = faker.address().city();
+        String cityName = faker.address().city().replace('ё', 'е');
         form.$("[data-test-id=city] input").setValue(cityName);
         form.$("[data-test-id=name] input").setValue(nameUser);
         form.$("[data-test-id=phone] input").setValue(phoneNumber);
+    }
+
+    private void inputDay() {
         form.$("[data-test-id=date]").click();
         form.$(By.xpath("//*[text()='" + (day + 5) + "']")).click();
     }
 
-    private void inputOtherData () {
+    private void inputOtherDay () {
         form.$("[data-test-id=date]").click();
         form.$(By.xpath("//*[text()='" + (day + 4) + "']")).click();
     }
