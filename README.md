@@ -1,7 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/a7p58fdmwr38i528?svg=true)](https://ci.appveyor.com/project/Alexander43884/patternstask)
 
 
-## Автоматический тест формы "Карта с доставкой"
+## Автоматический тест формы "Карта с доставкой!"
 (проверка визуализации скрытых форм)
 ___
 
