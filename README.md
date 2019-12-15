@@ -6,18 +6,22 @@
 ___
 
 * Создать папку, открыть терминал по адресу папки и инициализировать систему Git `git init`
-* Склонировать репозиторий `git clone https://github.com/AlexanderKachalov/WebTestSelenide.git`
-* Перейти в директорию artifacts `cd artifacts` и выполнить команду `java -jar app-card-delivery.jar`
+* Склонировать репозиторий `git clone https://github.com/AlexanderKachalov/PatternsTask.git`
+* Перейти в директорию artifacts `cd artifacts` и выполнить команду `java -jar app-card-delivery-next.jar`
 * Форма заявки находится по адресу `localhost:9999`
-* Вернуться в директорию с проектом `cd /WebTestSelenide`
+* Вернуться в директорию с проектом `cd /PatternsTusk`
 * Выполнить команду `./gradlew test` (`./gradlew.bat test` для Windows)
 * Отчет о выполнении тестов в директории `build/reports/tests/test`
 ___
-* Тестируемая форма (1) и отображение скрытой формы (2) при успешной регистрации:
+* Тестируемая форма (1) и отображение скрытых форм (2 и 3) при запланировании даты встречи и перепланировании даты:
 ---
             1 - тестирумая форма
-![](Pictures/Pictures_1_Initial_Form.png)
+![](pictures/order.png)
 
 ---
-            2 - отображение скрытой формы
-![](Pictures/Pictures_2_Visible_Hidden_Form.png)
+            2 - отображение 1-й скрытой формы при успешном запланировании встречи
+![](pictures/success.png)
+
+---
+            3 - отображение 2-й скрытой формы при перепланировании встречи
+![](pictures/replan.png)
