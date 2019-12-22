@@ -38,7 +38,8 @@ public class TestClass {
         $("[data-test-id=success-notification]").shouldBe(visible);
         $(By.xpath("//*[@id='root']/div/div[1]/button")).click();
         LocalDate otherDay = LocalDate.now().plusDays(plusDay);
-        String futureDay = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(otherDay);
+        String futureDay = DateTimeFormatter.ofPattern("dd.MM.yyyy").format(otherDay);
+//        String futureDay = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(otherDay);
         form.$("[placeholder='Дата встречи']").sendKeys("\b\b\b\b\b\b\b\b\b\b");
         form.$("[placeholder='Дата встречи']").setValue(futureDay).click();
         form.$$("button").find(exactText("Запланировать")).click();
